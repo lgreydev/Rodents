@@ -51,6 +51,8 @@
 		5E2276F52A6B6F0600E43A40 /* Rodents */ = {
 			isa = PBXGroup;
 			children = (
+				5E2277052A6B70AB00E43A40 /* Model */,
+				5E2277042A6B70A000E43A40 /* View */,
 				5E2276F62A6B6F0600E43A40 /* RodentsApp.swift */,
 				5E2276F82A6B6F0600E43A40 /* ContentView.swift */,
 				5E2276FA2A6B6F0800E43A40 /* Assets.xcassets */,
@@ -65,6 +67,20 @@
 				5E2276FD2A6B6F0800E43A40 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5E2277042A6B70A000E43A40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E2277052A6B70AB00E43A40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
