@@ -13,6 +13,7 @@
 		5E2276FE2A6B6F0800E43A40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2276FD2A6B6F0800E43A40 /* Preview Assets.xcassets */; };
 		5E2277072A6B70D000E43A40 /* Rodent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2277062A6B70D000E43A40 /* Rodent.swift */; };
 		5E2277092A70098C00E43A40 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2277082A70098C00E43A40 /* Home.swift */; };
+		5E22770C2A7010A100E43A40 /* MAnchorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E22770B2A7010A100E43A40 /* MAnchorKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		5E2276FD2A6B6F0800E43A40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5E2277062A6B70D000E43A40 /* Rodent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rodent.swift; sourceTree = "<group>"; };
 		5E2277082A70098C00E43A40 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		5E22770B2A7010A100E43A40 /* MAnchorKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAnchorKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		5E2276F52A6B6F0600E43A40 /* Rodents */ = {
 			isa = PBXGroup;
 			children = (
+				5E22770A2A70106C00E43A40 /* Helpers */,
 				5E2277052A6B70AB00E43A40 /* Model */,
 				5E2277042A6B70A000E43A40 /* View */,
 				5E2276F62A6B6F0600E43A40 /* RodentsApp.swift */,
@@ -87,6 +90,14 @@
 				5E2277062A6B70D000E43A40 /* Rodent.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5E22770A2A70106C00E43A40 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5E22770B2A7010A100E43A40 /* MAnchorKey.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 				5E2276F92A6B6F0600E43A40 /* ContentView.swift in Sources */,
 				5E2277072A6B70D000E43A40 /* Rodent.swift in Sources */,
 				5E2277092A70098C00E43A40 /* Home.swift in Sources */,
+				5E22770C2A7010A100E43A40 /* MAnchorKey.swift in Sources */,
 				5E2276F72A6B6F0600E43A40 /* RodentsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
