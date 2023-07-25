@@ -12,6 +12,12 @@ struct Home: View {
         List {
             ForEach(rodents) { rodent in
                 HStack(spacing: 15) {
+                    Color.clear
+                        .frame(width: 100, height: 100)
+                        .anchorPreference(key: MAnchorKey.self, value: .bounds) { anchor in
+                            return [rodent.id: anchor]
+                        }
+                    
                     VStack(alignment: .leading, spacing: 2) {
                         Text(rodent.name)
                             .font(.title3)
