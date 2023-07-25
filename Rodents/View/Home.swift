@@ -10,20 +10,14 @@ import SwiftUI
 struct Home: View {
     var body: some View {
         List {
-            ForEach(profiles) { profile in
+            ForEach(rodents) { rodent in
                 HStack(spacing: 15) {
-                    Image(profile.picture)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                    
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(profile.name)
+                        Text(rodent.name)
                             .font(.title3)
                             .padding(.bottom)
                         
-                        Text(profile.food)
+                        Text(rodent.diet)
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }
@@ -31,6 +25,21 @@ struct Home: View {
             }
         }
     }
+}
+
+
+struct ImageView: View {
+    var profile: Rodent
+    var size: CGSize
+    var body: some View {
+        Image(profile.picture)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: size.width, height: size.height)
+            .clipShape(Circle())
+    }
+    
+    
 }
 
 struct Home_Previews: PreviewProvider {
