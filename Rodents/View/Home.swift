@@ -44,20 +44,6 @@ struct Home: View {
     }
 }
 
-struct ImageView: View {
-    var profile: Rodent
-    var size: CGSize
-    var body: some View {
-        Image(profile.picture)
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: size.width, height: size.height)
-            .clipShape(Circle())
-    }
-    
-    
-}
-
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
