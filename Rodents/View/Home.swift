@@ -29,21 +29,20 @@ struct Home: View {
                     }
                 }
             }
-            .overlayPreferenceValue(MAnchorKey.self) { value in
-                GeometryReader { geometry in
-                    ForEach(rodents) { rodent in
-                        if let anchor = value[rodent.id] {
-                            let rect = geometry[anchor]
-                            ImageView(profile: rodent, size: rect.size)
-                                .offset(x: rect.minX, y: rect.minY)
-                        }
+        }
+        .overlayPreferenceValue(MAnchorKey.self) { value in
+            GeometryReader { geometry in
+                ForEach(rodents) { rodent in
+                    if let anchor = value[rodent.id] {
+                        let rect = geometry[anchor]
+                        ImageView(profile: rodent, size: rect.size)
+                            .offset(x: rect.minX, y: rect.minY)
                     }
                 }
             }
         }
     }
 }
-
 
 struct ImageView: View {
     var profile: Rodent
