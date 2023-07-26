@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Home: View {
+    @Binding var selectedRodent: Rodent?
+    @Binding var pushView: Bool
+    
     var body: some View {
         List {
             ForEach(rodents) { rodent in
@@ -35,12 +38,28 @@ struct Home: View {
                 ForEach(rodents) { rodent in
                     if let anchor = value[rodent.id] {
                         let rect = geometry[anchor]
-                        ImageView(profile: rodent, size: rect.size)
+                        ImageView(rodent: rodent, size: rect.size)
                             .offset(x: rect.minX, y: rect.minY)
                     }
                 }
             }
         }
+    }
+}
+
+struct DetailView: View {
+    var rodent: Rodent
+
+    var body: some View {
+        GeometryReader { geometry in
+            let size = geometry.size
+            
+            ImageView(rodent: rodent, size: size)
+        }
+        .frame(height: 400)
+        .ignoresSafeArea()
+        
+        Spacer(minLength: 0)
     }
 }
 

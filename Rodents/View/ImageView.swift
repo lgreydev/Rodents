@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ImageView: View {
-    var profile: Rodent
+    var rodent: Rodent
     var size: CGSize
     var body: some View {
-        Image(profile.picture)
+        Image(rodent.picture)
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(width: size.width, height: size.height)
