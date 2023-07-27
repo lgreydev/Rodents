@@ -16,6 +16,7 @@ struct ImageView: View {
             .aspectRatio(contentMode: .fill)
             .frame(width: size.width, height: size.height)
             .clipShape(Circle())
+//            .clipShape(Rectangle().cornerRadius(size.width > 60 ? 0 : 30))
     }
 }
 

@@ -14,21 +14,23 @@ struct Home: View {
     var body: some View {
         List {
             ForEach(rodents) { rodent in
-                HStack(spacing: 15) {
-                    Color.clear
-                        .frame(width: 100, height: 100)
-                        .anchorPreference(key: MAnchorKey.self, value: .bounds) { anchor in
-                            return [rodent.id: anchor]
-                        }
-                    
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(rodent.name)
-                            .font(.title3)
-                            .padding(.bottom)
+                Button {
+                    selectedRodent = rodent
+                    pushView.toggle()
+                } label: {
+                    HStack(spacing: 15) {
+                        Color.clear
+                            .frame(width: 100, height: 100)
                         
-                        Text(rodent.diet)
-                            .font(.footnote)
-                            .foregroundColor(.gray)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(rodent.name)
+                                .font(.title3)
+                                .padding(.bottom)
+                            
+                            Text(rodent.diet)
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                        }
                     }
                 }
             }
@@ -36,7 +38,7 @@ struct Home: View {
         .overlayPreferenceValue(MAnchorKey.self) { value in
             GeometryReader { geometry in
                 ForEach(rodents) { rodent in
-                    if let anchor = value[rodent.id] {
+                    if let anchor = value[rodent.id], selectedRodent?.id != rodent.id {
                         let rect = geometry[anchor]
                         ImageView(rodent: rodent, size: rect.size)
                             .offset(x: rect.minX, y: rect.minY)
@@ -48,18 +50,26 @@ struct Home: View {
 }
 
 struct DetailView: View {
-    var rodent: Rodent
+    @Binding var selectedRodent: Rodent?
+    @Binding var pushView: Bool
 
     var body: some View {
-        GeometryReader { geometry in
-            let size = geometry.size
-            
-            ImageView(rodent: rodent, size: size)
+        if let selectedRodent {
+            VStack {
+                GeometryReader { geometry in
+                    let size = geometry.size
+                    
+                    Color.clear
+                        .anchorPreference(key: MAnchorKey.self, value: .bounds) { anchor in
+                            return [selectedRodent .id: anchor]
+                        }
+                }
+                .frame(height: 400)
+                .ignoresSafeArea()
+                
+                Spacer(minLength: 0)
+            }
         }
-        .frame(height: 400)
-        .ignoresSafeArea()
-        
-        Spacer(minLength: 0)
     }
 }
 
